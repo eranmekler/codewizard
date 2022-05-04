@@ -1,0 +1,11 @@
+jenkins:
+  systemMessage: "Hello code wizard"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: admin
+          password: ${password}
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false

@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - ./jenkins.yaml:/var/jenkins_conf/jenkins.yaml
+    secrets:
+     # - id
+      - password
+    environment:
+      - CASC_JENKINS_CONFIG=/var/jenkins_conf/jenkins.yaml
+secrets:
+  id:
+    file: ./secrets/id.txt
+  password:
+    file: ./secrets/password.txt
+volumes:
+  jenkins_home:
