@@ -11,7 +11,7 @@ the server will run http://ip:8080
 user name and password are preconfigured
 
 *username:* admin
-*password:* adminps
+*password:* adminpw
 
 ## shutdown server
 
